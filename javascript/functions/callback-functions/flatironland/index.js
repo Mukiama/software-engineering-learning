@@ -7,6 +7,10 @@ function selectThemeParkRide(displayRideDetails) {
         alert("Error: Invalid theme park ride!");
         return;
     }
+    const ride = {
+        name: rideName
+        
+    };
 }
     
 selectThemeParkRide((ride) => {
