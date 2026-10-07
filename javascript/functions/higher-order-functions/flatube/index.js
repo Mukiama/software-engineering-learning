@@ -22,14 +22,22 @@ function selectVideo(addComment){
 
     //Pass Data to the Callback Function
     const commentIndex = addComment(videoName, comment);
+    // Confirm the Comment Addition
+   alert(`Your comment has been successfully added! Here is the comment that you left for the "${videoName}" video:\n\n${comment}`); 
     return function(){
-
+        // Prompt the user to update their comment
+        const updatedComment = prompt("Please enter your updated comment:");
+        // Update the comment in the comments array
+        comments[commentIndex].text = updatedComment;
+        // Notify the user that their comment has been updated
+        alert(`Your comment has been successfully updated to:\n\n${updatedComment}`);
     }
+    
 }
     
 alert ("Welcome to FlatTube!");
 
-selectVideo((videoName, comment) => {
+const editComment = selectVideo((videoName, comment) => {
     const commentData = {
         video: videoName,
         text: comment
