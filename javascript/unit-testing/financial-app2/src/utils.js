@@ -1,9 +1,4 @@
 export function calculateTotalInterest(investments) {
-    let totalInterest = 0;
-    for (const investment of investments) {
-        const interest = (investment.amount * investment.rate * investment.years) / 100;
-        totalInterest += interest;
-    }
-    return totalInterest;
-
+    return investments.reduce((total, investment) => 
+    total + investment.amount * (investment.rate / 100) * investment.years, 0);
 }
