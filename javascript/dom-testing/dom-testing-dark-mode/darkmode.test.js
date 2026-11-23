@@ -34,7 +34,17 @@ test('Toggles between light mode and dark mode', () => {
     expect(body.classList.contains('light-mode')).toBe(true);
     expect(toggleButton.textContent).toBe('Switch to Dark Mode');
 
-     ​​// NEW CODE BELOW: 
+
     // Simulate toggle to dark mode
     toggleButton.click();
+    // test we switched to dark mode
+    expect(body.classList.contains('dark-mode')).toBe(true);
+    expect(body.classList.contains('light-mode')).toBe(false);
+    expect(toggleButton.textContent).toBe('Switch to Light Mode');
+    // Simulate toggle back to light mode
+    toggleButton.click();
+    // test we switched back to light mode
+    expect(body.classList.contains('light-mode')).toBe(true);
+    expect(body.classList.contains('dark-mode')).toBe(false);
+    expect(toggleButton.textContent).toBe('Switch to Dark Mode');
 });
