@@ -26,3 +26,11 @@ beforeEach(() => {
     const script = new Function('document', scriptContent);
     script(document);
 });
+test('Toggles between light mode and dark mode', () => {
+    const body = document.body;
+    const toggleButton = document.getElementById('theme-toggle-btn');
+
+    // Initial state
+    expect(body.classList.contains('light-mode')).toBe(true);
+    expect(toggleButton.textContent).toBe('Switch to Dark Mode');
+});
